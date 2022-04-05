@@ -10,7 +10,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const MONGODB_DATABASE =`mongodb+srv://dilnozaaabd:dilnozaaabd@cluster0.9vrli.mongodb.net/AppNoteDB`
+const MONGODB_DATABASE =`mongodb+srv://dilnozaaabd:efSt4a@L5NWW7_r@cluster0.9vrli.mongodb.net/AppNoteDB`
 mongoose.connect(MONGODB_DATABASE || "mongodb://localhost:27017/AppNoteDB");
 
 const AppNoteDBSchema = {
