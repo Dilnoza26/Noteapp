@@ -1,0 +1,25 @@
+<%- include('header') %>
+<link rel="stylesheet" href="../css/style.css">
+
+<div class="basic row">
+    <form action="/edit/<%= note[0]['_id'] %>" method="post">
+      <div class="col-sm-6 ">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Title: </h5>
+            <input class="input" required name="title"  value="<%= note[0]['title'] %>"  type="text" placeholder="Put your title">
+            <h5 class="card-title">Explanation</h5>
+            <input class="input" required name="explanation" value="<%= note[0]['explanation'] %>"  type="text" placeholder="Put your Explanation">
+            <div class="add">
+                <button class="btn btn-info">Save</button>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </form>
+</div>
+
+<%- include('footer') %>
+
+
+       
