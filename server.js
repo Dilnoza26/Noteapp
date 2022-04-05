@@ -1,16 +1,17 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const port = 8001;
+const PORT =process.env.PORT || 8001;
 const mongoose = require("mongoose");
-
+const dotenv =  require('dotenv');
+dotenv.config()
 // middleware
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-mongoose.connect("mongodb://localhost:27017/AppNoteDB");
+const MONGODB_DATABASE =`mongodb+srv://dilnozaaabd:dilnozaaabd@cluster0.9vrli.mongodb.net/AppNoteDB`
+mongoose.connect(MONGODB_DATABASE || "mongodb://localhost:27017/AppNoteDB");
 
 const AppNoteDBSchema = {
   title: String,
@@ -95,6 +96,6 @@ app.post('/edit/:id', (req, res) => {
 
 
 
-app.listen(port, ()=>{
+app.listen(PORT, ()=>{
     console.log('listening on port  8001');
 });
